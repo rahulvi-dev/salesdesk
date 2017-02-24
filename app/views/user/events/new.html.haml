@@ -1,0 +1,68 @@
+.page-wrap#wrapper
+  .container.offerNew
+    = form_for([:user,:client,@event]) do |f|
+      %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "100%", :class => "tableForm"}
+        %tbody
+          %tr
+            %td#stepBtnHeight.leftCol{:width => "70%"}
+              .formBox
+                .row
+                  .col-xs-12
+                    .formField
+                      .col-xs-12.blue
+                        .row
+                          Customer:
+                          =@client.business_unit
+                          %br
+                          Subject:
+                          Open House Meeting
+                          %br
+                          Planning Date:
+                          = Time.now.strftime("%d-%m-%Y")
+                      .col-xs-12.blue
+                        .row
+                          EVENT BASIC INFORMATION
+                      .col-xs-12.col-sm-6
+                        .form-group#eventdate
+                          = f.label :event_date
+                          = f.text_field :event_date, :id => "datepicker" do
+                            .span.glyphicon.glyphicon-calendar
+                      .col-xs-12.col-sm-6
+                        .form-group#time_per_customer
+                          = f.label :time_per_customer
+                          = f.text_field :time_per_customer, :class => "form-control"
+                      .col-xs-12.col-sm-6
+                        .form-group#start_time
+                          = f.label :start_time
+                          = f.text_field :start_time, :id => "timepicker1"
+                      .input-append.bootstrap-timepicker-component{:style => "display: inline;"}
+                        %input.dateselect-time.input-small{"data-time" => "12:45 PM", :type => "text"}/
+                        %span.add-on
+                          %i.icon-time                          
+                      .col-xs-12.col-sm-6
+                        .form-group#no_of_rooms
+                          = f.label :no_of_rooms
+                          = f.text_field :no_of_rooms, :class => "form-control"
+                      .col-xs-12.col-sm-6
+                        .form-group#end_time
+                          = f.label :end_time
+                          = f.text_field :end_time, :class => "form-control"
+                      .col-xs-12.col-sm-6
+                        .form-group#price
+                          = f.label :price
+                          = f.text_field :price, :class => "form-control"
+                          = f.hidden_field :client_id, :value => @client.id
+                          = f.hidden_field :planning_date, :value => Time.now.strftime("%d-%m-%Y")   
+            %td.stepBtnGroup.rightCol{:width => "30%"}
+              %button.h11.stepBtn.saveBtn{:type => "submit", :name => "save_return"} Save information and return back
+
+:javascript
+   $(function() {
+     $("#datepicker").datepicker();
+   });
+
+   $(function() {
+     $('#timepicker1').timepicker().on('changeTime', function(ev) {
+      alert('time has changed');
+      });
+   });

@@ -1,0 +1,66 @@
+.page-wrap#wrapper
+  .container
+    .page-title
+      %h1 Digital Sales Desk
+    .row
+      .col-xs-12.col-sm-4.col-md-3
+        %a.toolBox{:href => "/user/offer_new"}
+          .toolImage
+            %img{:alt => "Arrange new sales offer", :src => "/assets/da_sales.png"}
+          .toolTitle
+            Arrange new
+            %span Sales offer
+      .col-xs-12.col-sm-4.col-md-3
+        %a.toolBox{:href => "/user/clients/new"}
+          .toolImage
+            %img{:alt => "Arrange Open House Event", :src => "/assets/da_event.png"}
+          .toolTitle
+            Arragne Open House
+            %span Event
+      .col-xs-12.col-sm-4.col-md-3
+        %a.toolBox{:href => "javascript:void(0);"}
+          .toolImage
+            %img{:alt => "Arrane Refferal Event", :src => "/assets/da_event_2.png"}
+          .toolTitle
+            Arrane Refferal 
+            %span Event
+      .col-xs-12.col-sm-4.col-md-3
+        %a.toolBox{:href => "javascript:void(0);"}
+          .toolImage
+            %img{:alt => "Insights Tools", :src => "/assets/insights.png"}
+          .toolTitle
+            Insights
+            %span Tools
+      .col-xs-12.col-sm-4.col-md-3
+        %a.toolBox{:href => "javascript:void(0);"}
+          .toolImage
+            %img{:alt => "Open and Insights Archive", :src => "/assets/da_offers.png"}
+          .toolTitle
+            Open and Insights
+            %span Archive
+      .col-xs-12.col-sm-4.col-md-3            
+        %a.toolBox{:href => "javascript:void(0);"}
+          .toolImage
+            %img{:alt => "Open House Archive", :src => "/assets/da_open_archive.png"}
+          .toolTitle
+            Open House
+            %span Archive
+      .col-xs-12.col-sm-4.col-md-3
+        %a.toolBox{:href => "javascript:void(0);"}
+          .toolImage
+            %img{:alt => "Refferal Archive", :src => "/assets/da_refferal_archive.png"}
+          .toolTitle
+            Refferal
+            %span Archive
+      .col-xs-12.col-sm-4.col-md-3
+        %a.toolBox{:href => "javascript:void(0);"}
+          .toolImage
+            %img{:alt => "Own Performance Reports", :src => "/assets/performance.png"}
+          .toolTitle
+            Own Performance
+            %span Report
+
+:javascript
+  $(document).ready(function(){
+    slideContent('right');
+  });

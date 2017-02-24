@@ -1,0 +1,15 @@
+- if @start
+  %a.fxBtn{href: "/"}
+    = "START"
+    %i.arrowBack
+- elsif @client_info
+  %a.fxBtn{:href => "/"} START
+  %a.fxBtn{:href => "/user/desks"} 
+    Sales Desk
+    %i.arrowBack
+- elsif @event_info
+  %a.fxBtn{:href => "/"} START
+  %a.fxBtn{:href => "/user/desks"} Sales Desk
+  %a.fxBtn{:href => "/user/clients/#{params[:client_id]}/edit"} 
+    Client information
+    %i.arrowBack

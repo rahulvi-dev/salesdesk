@@ -1,0 +1,59 @@
+.page-wrap#wrapper
+  .container
+    .page-title
+      %h1 Sales Tool Kit
+    .row
+      .col-xs-12.col-sm-4.col-md-3
+        %a.toolBox{:href => "/user/desks"}
+          .toolImage
+            %img{:alt => "Mananing Events", :src => "/assets/da_shop.png"}
+          .toolTitle
+            Digital Sales
+            %span Desk
+      .col-xs-12.col-sm-4.col-md-3
+        %a.toolBox{:href => "javascript:void(0);"}
+          .toolImage
+            %img{:alt => "My Settings", :src => "/assets/da_setting.png"}
+          .toolTitle
+            My
+            %span Settings
+      .col-xs-12.col-sm-4.col-md-3
+        %a.toolBox{:href => "javascript:void(0);"}
+          .toolImage
+            %img{:alt => "Send Feedback To Developers", :src => "/assets/da_feedback.png"}
+          .toolTitle
+            Send feedback
+            %span To developers
+      .col-xs-12.col-sm-4.col-md-3
+        %a.toolBox{:href => "javascript:void(0);"}
+          .toolImage
+            %img{:alt => "End Session", :src => "/assets/da_logout.png"}
+          .toolTitle
+            End
+            %span Session
+      .col-xs-12.col-sm-4.col-md-3
+        %a.toolBox{:href => "javascript:void(0);"}
+          .toolImage
+            %img{:alt => "Add New User", :src => "/assets/da_user.png"}
+          .toolTitle
+            Add new
+            %span User
+      .col-xs-12.col-sm-4.col-md-3
+        %a.toolBox{:href => "javascript:void(0);"}
+          .toolImage
+            %img{:alt => "Sales Reports", :src => "/assets/da_report.png"}
+          .toolTitle
+            Sales
+            %span Reports
+      .col-xs-12.col-sm-4.col-md-3
+        %a.toolBox{:href => "javascript:void(0);"}
+          .toolImage
+            %img{:alt => "Sales Presentations", :src => "/assets/da_presentation.png"}
+          .toolTitle
+            Sales
+            %span Presentations      
+
+:javascript
+  $(document).ready(function(){
+    slideContent('right');
+  });

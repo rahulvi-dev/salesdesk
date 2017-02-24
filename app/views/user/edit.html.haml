@@ -1,0 +1,34 @@
+= form_for(current_user, url: update_password_path, :html => {:class => "form-horizontal"}) do |f|
+  = f.hidden_field :reset_password_token
+  %fieldset
+    %legend
+      = t('general.change_password')
+    .form-group
+      %label.col-lg-2.control-label
+      .col-lg-10
+        - if alert.present?
+          .alert.alert-dismissible.alert-danger
+            %button.close{"data-dismiss" => "alert", :type => "button"} ×
+            %a.alert-link{:href => "#"}
+              = alert
+
+    .form-group{:class => (current_user.errors["password"].any? ? "has-error" : '')}
+      %label.col-lg-2.control-label{:for => "inputPassword"} 
+        = t('change_password.new_password')
+      .col-lg-10
+        = f.password_field :password, autofocus: true, autocomplete: "off", placeholder: t('change_password.new_password'), :class => "form-control"
+        - if current_user.errors["password"].any?
+          .errorMsg
+            = current_user.errors["password"].first
+
+    .form-group{:class => (current_user.errors["password_confirmation"].any? ? "has-error" : '')}
+      %label.col-lg-2.control-label{:for => "inputPassword"} 
+        = t('change_password.confirm_password')
+      .col-lg-10
+        = f.password_field :password_confirmation, autocomplete: "off", placeholder: t('change_password.confirm_password'), :class => "form-control"
+        - if current_user.errors["password_confirmation"].any?
+          .errorMsg
+            = current_user.errors["password_confirmation"][0]        
+    .form-group
+      .col-lg-10.col-lg-offset-2        
+        = f.submit t('change_password.change_my_password'), :class => "btn btn-success"

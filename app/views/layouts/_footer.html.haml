@@ -1,0 +1,26 @@
+.container
+  %footer.footer
+    .row
+      .col-lg-12
+        %ul.list-unstyled
+          %li.pull-right
+            %a{:href => "#top"} Back to top
+          %li
+            / =link_to t('footer.teams_of_service'), static_page_path('service')
+          %li
+            / =link_to t('footer.privacy_policy'), static_page_path('privacy')
+          %li
+            / =link_to t('footer.contact_us'), static_page_path('contact')
+        %p
+          %h2= t('footer.about_us')
+          %p= t('footer.about_us_content')      
+        %p.copyRight
+          \&copy; 2015
+          %span= t('footer.fenux_licensing')
+          = t('footer.subsidiary')        
+
+:javascript
+  $(document).ready(function() {
+    $("#flash_notice").delay(6000).fadeOut(300);
+  });
+

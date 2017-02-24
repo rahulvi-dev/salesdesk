@@ -1,0 +1,78 @@
+- if current_user
+  %nav.navbar.navbar-default
+    .container
+      .navbar-header
+        %button.navbar-toggle{:type => "button"}
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        = render "layouts/nav_header"
+        .navbar-collapse
+          .menuBox
+            .row
+              .col-xs-12.col-sm-4.col-md-3
+                %a.toolBox{:href => "javascript:void(0);"}
+                  .toolImage
+                    %img{:alt => "Manage your offers", :src => "/assets/da_offers.png"}
+                  .toolTitle
+                    Manage your
+                    %span Offers
+              .col-xs-12.col-sm-4.col-md-3
+                %a.toolBox{:href => "/user/offer_new"}
+                  .toolImage
+                    %img{:alt => "Arrange new sales offer", :src => "/assets/da_sales.png"}
+                  .toolTitle
+                    Arrange new
+                    %span Sales offer
+              .col-xs-12.col-sm-4.col-md-3
+                %a.toolBox{:href => "/user/shop"}
+                  .toolImage
+                    %img{:alt => "Engineering Shop", :src => "/assets/da_shop.png"}
+                  .toolTitle
+                    Engineering
+                    %span Shop
+              .col-xs-12.col-sm-4.col-md-3
+                %a.toolBox{:href => "javascript:void(0);"}
+                  .toolImage
+                    %img{:alt => "Benefit calculation", :src => "/assets/da_benefit.png"}
+                  .toolTitle
+                    Benefit
+                    %span Calculation
+              .col-xs-12.col-sm-4.col-md-3
+                %a.toolBox{:href => "javascript:void(0);"}
+                  .toolImage
+                    %img{:alt => "Own reports", :src => "/assets/da_report.png"}
+                  .toolTitle
+                    Own
+                    %span Reports
+              .col-xs-12.col-sm-4.col-md-3
+                - if @universal
+                  %a.toolBox{:href => "javascript:void(0);"}
+                    .toolImage
+                      %img{:alt => "Service and places", :src => "/assets/da_delivery.png"}
+                    .toolTitle
+                      Service and
+                      %span Places
+                - else
+                  %a.toolBox{:href => "javascript:void(0);"}
+                    .toolImage
+                      %img{:alt => "Woikoski places", :src => "/assets/da_woikoski.png"}
+                    .toolTitle
+                      Woikoski
+                      %span Places
+              .col-xs-12.col-sm-4.col-md-3
+                %a.toolBox{:href => "javascript:void(0);"}
+                  .toolImage
+                    %img{:alt => "My Settings", :src => "/assets/da_setting.png"}
+                  .toolTitle
+                    My
+                    %span Settings
+              .col-xs-12.col-sm-4.col-md-3
+                %a.toolBox{:href => "javascript:void(0);"}
+                  .toolImage
+                    %img{:alt => "End Session", :src => "/assets/da_logout.png"}
+                  .toolTitle
+                    End
+                    %span Session
+          .menuOverlay
